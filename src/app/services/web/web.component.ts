@@ -21,16 +21,17 @@ export class WebComponent implements OnInit {
 
   ngOnInit() {
     this.webServiceList = Object.values(this.webServices);
-    // console.log(this.activatedRoute.params);
+    console.log(this.activatedRoute.params);
     this.activatedRoute.params.subscribe(p => {
-      // console.log(p);
-      // console.log(Object.keys(p).length);
-      if(Object.keys(p).length===0){
+     // console.log(p);
+       //console.log(Object.keys(p).length);
+       if(Object.keys(p).length===0){
         this.description = this.webServices['custom']['description'];
       }else{
         this.description = this.webServices[p.serv]['description'];
       }
-  });
+  
+    });
 
 }
 
